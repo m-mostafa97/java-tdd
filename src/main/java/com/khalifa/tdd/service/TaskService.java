@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.khalifa.tdd.model.Task;
 import com.khalifa.tdd.repository.TaskRepository;
 
+@Service
 public class TaskService {
     @Autowired
     TaskRepository taskRepository;
