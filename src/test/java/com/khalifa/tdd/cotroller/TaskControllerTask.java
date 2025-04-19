@@ -46,4 +46,17 @@ public class TaskControllerTask {
         .andExpect(jsonPath("$[0].title").value("Test save test"))
         .andExpect(jsonPath("$[1].title").value("Test save test 2"));
     }
+
+    @Test
+    void testCreateTask () throws Exception {
+        // Arrange
+        Task task = new Task(1L, "Test save test", "TODO");
+        when(taskService.saveTask(task)).thenReturn(task);
+        // Act & Assert
+        mockMvc.perform(post("/tasks")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(task)))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.title").value("Test save test"));
+    }
 }
