@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -19,8 +20,8 @@ import com.khalifa.tdd.service.TaskService;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.hamcrest.Matchers.*;
-@WebMvcTest(TaskController.class)
-public class TaskControllerTask {
+@WebMvcTest(controllers = TaskController.class)
+public class TaskControllerTest {
     
     @MockBean
     TaskService taskService;
