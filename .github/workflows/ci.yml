@@ -43,6 +43,7 @@ jobs:
       - name: Deploy to Elastic Beanstalk
         run: |
               pip install awsebcli --upgrade
+              mvn clean package
               cp target/*.jar myapp.jar
               zip -r app.zip myapp.jar Procfile
               eb init -p corretto-17 -r us-west-2 tdd2
