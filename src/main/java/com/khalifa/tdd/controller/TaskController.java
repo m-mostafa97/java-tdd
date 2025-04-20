@@ -37,4 +37,9 @@ public class TaskController {
     public List<Task> deleteList() {
         return taskService.getAllTasks();
     }
+
+    @GetMapping("/tasks/update")
+    public String updateList() {
+        return "Update task";
+    }
 }
