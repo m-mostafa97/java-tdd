@@ -46,7 +46,8 @@ jobs:
       #7. Create deployment zip
       - name: Create deployment zip
         run: |
-          zip -r app.zip myapp.jar
+          echo "web: java -jar myapp.jar" > Procfile
+          zip -r app.zip myapp.jar Procfile
           ls
 
       # 6. Deploy
