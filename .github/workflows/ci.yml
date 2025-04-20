@@ -50,12 +50,12 @@ jobs:
           zip -r app.zip application.jar Procfile
           ls
 
-      # # 6. Deploy
-      # - name: Deploy to Elastic Beanstalk
-      #   run: |
-      #         pip install awsebcli --upgrade
-      #         eb init -p corretto-17 -r us-west-2 tdd2
-      #         eb deploy
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      # 6. Deploy
+      - name: Deploy to Elastic Beanstalk
+        run: |
+              pip install awsebcli --upgrade
+              eb init -p corretto-17 -r us-west-2 tdd2
+              eb deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
