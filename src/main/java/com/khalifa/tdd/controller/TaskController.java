@@ -32,4 +32,9 @@ public class TaskController {
         log.info("Saving task: {}", task);
         return taskService.saveTask(task);
     }
+
+    @GetMapping("/tasks/delete")
+    public List<Task> deleteList() {
+        return taskService.getAllTasks();
+    }
 }

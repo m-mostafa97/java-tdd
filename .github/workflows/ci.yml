@@ -38,3 +38,15 @@ jobs:
       # 5. Run test suite
       - name: Run tests
         run: mvn test
+
+      # 6. Deploy
+      - name: Deploy to Elastic Beanstalk
+        run: |
+              pip install awsebcli --upgrade
+              cp target/*.jar myapp.jar
+              zip -r app.zip myapp.jar Procfile
+              eb init -p corretto-17 -r us-west-2 tdd2
+              eb deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
