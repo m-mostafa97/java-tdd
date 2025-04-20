@@ -39,14 +39,16 @@ jobs:
       - name: Run tests
         run: mvn test
 
-
+      # 6. Copy JAR to root for deployment
       - name: Copy JAR to root for deployment
         run: cp target/*.jar application.jar
 
+      #7. Create deployment zip
       - name: Create deployment zip
         run: |
           echo "web: java -jar application.jar" > Procfile
           zip -r app.zip application.jar Procfile
+          ls
 
       # # 6. Deploy
       # - name: Deploy to Elastic Beanstalk
