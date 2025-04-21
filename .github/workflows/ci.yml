@@ -54,6 +54,7 @@ jobs:
         run: |
               pip install --upgrade --user awsebcli
               echo "$HOME/.local/bin" >> $GITHUB_PATH
+              eb init --platform "Docker running on 64bit Amazon Linux 2023" --region us-west-2
               eb deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
