@@ -40,6 +40,6 @@ public class TaskController {
 
     @GetMapping("/tasks/update")
     public String updateList() {
-        return "Update task";
+        return "Update task status";
     }
 }

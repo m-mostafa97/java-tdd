@@ -1,8 +1,8 @@
 branch-defaults:
   main:
-    environment: tdd-env-6
+    environment: tdd-env-7
 environment-defaults:
-  tdd-env-6:
+  tdd-env-7:
     branch: null
     repository: null
 global:
