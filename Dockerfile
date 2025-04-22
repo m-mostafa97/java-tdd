@@ -18,3 +18,5 @@ COPY --from=builder /app/target/*.jar app.jar
 
 # Run the jar
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+
+EXPOSE 8080
