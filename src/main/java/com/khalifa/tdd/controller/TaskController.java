@@ -22,6 +22,10 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
+    @GetMapping("/")
+    public String home() {
+        return "Home";
+    }
     @GetMapping("/tasks")
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
