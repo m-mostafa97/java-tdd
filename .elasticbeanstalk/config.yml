@@ -1,12 +1,13 @@
 branch-defaults:
   main:
-    environment: tdd-env-7
+    environment: tdd-env-8
+    group_suffix: null
 environment-defaults:
   tdd-env-7:
     branch: null
     repository: null
 global:
-  application_name: tdd3
+  application_name: tdd8
   default_ec2_keyname: null
   default_platform: Docker running on 64bit Amazon Linux 2023
   default_region: us-west-2
